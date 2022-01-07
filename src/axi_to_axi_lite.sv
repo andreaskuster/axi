@@ -47,13 +47,13 @@ module axi_to_axi_lite #(
 
   // The transaction information that will be stored locally.
   typedef struct packed {
-    logic [$bits(in.r_id)-1:0] id;
-    logic [$bits(in.r_user)-1:0] user;
+    logic [$bits(in.AXI_ID_WIDTH)-1:0] id;
+    logic [$bits(in.AXI_USER_WIDTH)-1:0] user;
   } meta_rd_t;
 
   typedef struct packed {
-    logic [$bits(in.b_id)-1:0] id;
-    logic [$bits(in.b_user)-1:0] user;
+    logic [$bits(in.AXI_ID_WIDTH)-1:0] id;
+    logic [$bits(in.AXI_USER_WIDTH)-1:0] user;
   } meta_wr_t;
 
   // HACK: Rather than passing a meta_rd_t and meta_wr_t into the FIFO's data_o
